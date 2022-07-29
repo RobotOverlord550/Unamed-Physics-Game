@@ -1,2 +1,2 @@
 # Unamed-Physics-Game
-Multiplaye voxel based physics game.
+Multiplayer voxel based physics game.
