@@ -1,86 +1,115 @@
-using System.Collections;
-using System.Collections.Generic;
+using System;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class Inventory : MonoBehaviour
 {
     [SerializeField] string inventoryPanelTag;
-    [SerializeField] GameObject inventorySlotImageExample;
+    [SerializeField] GameObject inventorySlotImageExample, selectedInventorySlotImageExample;
     [SerializeField] int inventorySize = 10;
 
+    PlayerControls playerControls;
     GameObject inventoryPanel;
-    Inventory[] inventory;
-    int selectedSlot = 0;
+    InventoryItemStack[] inventory;
+    int selectedSlot = 1;
     bool selectedSlotChanged = false;
 
     /// <summary>
-    /// Updates the selected slot of the inventory based on player input
+    /// Updates selected selected slot based on input
     /// </summary>
     void updateSelectedSlot()
     {
-        if (Input.GetKeyDown(KeyCode.Alpha0))
+        if (playerControls.Player.InventorySlotSelect.triggered)
         {
-            selectedSlot = 0;
+            selectedSlot = (int)Math.Round(playerControls.Player.InventorySlotSelect.ReadValue<float>());
+
+            selectedSlotChanged = true;
         }
-        else if (Input.GetKeyDown(KeyCode.Alpha1))
+        else if (playerControls.Player.InventorySlotScroll.triggered)
         {
-            selectedSlot = 1;
-        }
-        else if (Input.GetKeyDown(KeyCode.Alpha2))
-        {
-            selectedSlot = 2;
-        }
-        else if (Input.GetKeyDown(KeyCode.Alpha3))
-        {
-            selectedSlot = 3;
-        }
-        else if (Input.GetKeyDown(KeyCode.Alpha4))
-        {
-            selectedSlot = 4;
-        }
-        else if (Input.GetKeyDown(KeyCode.Alpha5))
-        {
-            selectedSlot = 5;
-        }
-        else if (Input.GetKeyDown(KeyCode.Alpha6))
-        {
-            selectedSlot = 6;
-        }
-        else if (Input.GetKeyDown(KeyCode.Alpha7))
-        {
-            selectedSlot = 7;
-        }
-        else if (Input.GetKeyDown(KeyCode.Alpha8))
-        {
-            selectedSlot = 8;
-        }
-        else if (Input.GetKeyDown(KeyCode.Alpha9))
-        {
-            selectedSlot = 9;
+            float input = playerControls.Player.InventorySlotScroll.ReadValue<float>();
+
+            if (input > 0)
+            {
+                if(selectedSlot == 1)
+                {
+                    selectedSlot = inventorySize;
+                }
+                else
+                {
+                    selectedSlot -= 1;
+                }
+            }
+            else if(input < 0)
+            {
+                if (selectedSlot == inventorySize)
+                {
+                    selectedSlot = 1;
+                }
+                else
+                {
+                    selectedSlot += 1;
+                }
+            }
+
+            selectedSlotChanged = true;
         }
         else
         {
-            return;
+            selectedSlotChanged = false;
         }
-
-        selectedSlotChanged = true;
     }
 
     /// <summary>
-    /// Instantiates inventory graphics and data
+    /// Instantiates inventory graphics
     /// </summary>
     void updateInventoryGraphics()
     {
-        inventoryPanel = GameObject.FindGameObjectWithTag(inventoryPanelTag);
 
-        inventory = new Inventory[inventorySize];
+
+        void instantiateGameObjects(int i)
+        {
+            GameObject inventorySlot;
+            Transform inventorySlotTransform;
+
+            if(i == selectedSlot)
+            {
+                inventorySlot = Instantiate<GameObject>(selectedInventorySlotImageExample);
+            }
+            else
+            {
+                inventorySlot = Instantiate<GameObject>(inventorySlotImageExample);
+            }
+
+            inventorySlotTransform = inventorySlot.GetComponent<Transform>();
+
+            inventorySlotTransform.SetParent(inventoryPanel.GetComponent<Transform>());
+
+            if (inventory[i] != null)
+            {
+                GameObject Icon = Instantiate<GameObject>(inventory[i].inventoryItem.inventorySlotImageExample);
+
+                Icon.GetComponent<Transform>().SetParent(inventorySlotTransform);
+            }
+        }
+
+        foreach(Transform child in inventoryPanel.GetComponent<Transform>())
+        {
+            Destroy(child.gameObject);
+        }
 
         for(int i = 1; i <= inventorySize; i++)
         {
-            GameObject inventroySlot = Instantiate<GameObject>(inventorySlotImageExample);
-
-            inventroySlot.GetComponent<Transform>().parent = inventoryPanel.GetComponent<Transform>();
+            instantiateGameObjects(i);
         }
+    }
+
+    private void Awake()
+    {
+        playerControls = GetComponent<PlayerControlsManager>().playerControls;
+        inventoryPanel = GameObject.FindGameObjectWithTag(inventoryPanelTag);
+        
+        inventory = new InventoryItemStack[inventorySize];
     }
 
     /// <summary>
@@ -96,9 +125,13 @@ public class Inventory : MonoBehaviour
     /// </summary>
     void Update()
     {
+        updateSelectedSlot();
+
         if (selectedSlotChanged)
         {
             updateInventoryGraphics();
         }
+
+        print(selectedSlot);
     }
 }

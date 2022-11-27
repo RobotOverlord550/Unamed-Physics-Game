@@ -1,12 +1,15 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class Movement : MonoBehaviour
 {
-    private Vector3 PlayerMovementInput;
-    private Vector2 PlayerMouseInput;
-    private float xRot;
+    private PlayerControls playerControls;
+    private Vector2 PlayerMovementInput, PlayerCameraInput;
+    private float xRot;    
+    private bool jumpButtonPressed;
 
     [SerializeField] float cameraSensitivity;
     [SerializeField] float jumpForce;
@@ -33,31 +36,34 @@ public class Movement : MonoBehaviour
     /// </summary>
     private void MovePlayer()
     {
-        // moving
-        Vector3 moveVector = transform.TransformDirection(PlayerMovementInput) * movementVelocity;
-        rigidBody.velocity = new Vector3(moveVector.x, rigidBody.velocity.y, moveVector.z);
+        Vector3 moveVector = transform.TransformDirection(PlayerMovementInput.x, 0 , PlayerMovementInput.y) * movementVelocity;
+        rigidBody.velocity = (new Vector3(moveVector.x, rigidBody.velocity.y, moveVector.z));
+    }
 
-        // jumping
+    private void DoJump(InputAction.CallbackContext obj)
+    {
         if (noClip)
         {
-            if (Input.GetKey(KeyCode.Space))
-            {
-                rigidBody.velocity = new Vector3(rigidBody.velocity.x, movementVelocity, rigidBody.velocity.z);
-            }
-            else if(Input.GetKey(KeyCode.LeftShift))
-            {
-                rigidBody.velocity = new Vector3(rigidBody.velocity.x, -movementVelocity, rigidBody.velocity.z);
-            }
-            else
-            {
-                rigidBody.velocity = new Vector3(rigidBody.velocity.x, 0, rigidBody.velocity.z);
-            }
+            rigidBody.velocity = new Vector3(rigidBody.velocity.x, movementVelocity, rigidBody.velocity.z);
         }
-        else if(Input.GetKeyDown(KeyCode.Space) && isGrounded())
+        else if(isGrounded())
         {
             rigidBody.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
         }
+    }
 
+    private void DoCrouch(InputAction.CallbackContext obj)
+    {
+        if (noClip)
+        {
+            rigidBody.velocity = new Vector3(rigidBody.velocity.x, -movementVelocity, rigidBody.velocity.z);
+        }
+    }
+
+    private void toggleNoClip(InputAction.CallbackContext obj)
+    {
+        noClip = !noClip;
+        rigidBody.useGravity = !rigidBody.useGravity;
     }
 
     /// <summary>
@@ -65,38 +71,37 @@ public class Movement : MonoBehaviour
     /// </summary>
     private void MoveCamera()
     {
-        xRot -= PlayerMouseInput.y * cameraSensitivity;
+        xRot -= PlayerCameraInput.y * cameraSensitivity;
 
-        transform.Rotate(0f, PlayerMouseInput.x * cameraSensitivity, 0f);
+        transform.Rotate(0f, PlayerCameraInput.x * cameraSensitivity, 0f);
         PlayerCamera.transform.localRotation = Quaternion.Euler(xRot, 0f, 0f);
     }
 
     private void Awake()
     {
         Cursor.lockState = CursorLockMode.Locked;
+
+        playerControls = GetComponent<PlayerControlsManager>().playerControls;
+
+        playerControls.Player.Jump.started += DoJump;
+        playerControls.Player.Crouch.started += DoCrouch;
+        playerControls.Player.ToggleNoClip.started += toggleNoClip;
     }
 
-    /// <summary>
-    /// Start is called before the first frame update
-    /// </summary>
-    void Start()
+    private void OnEnable()
     {
-
+        playerControls.Player.Jump.Enable();
+        playerControls.Player.Crouch.Enable();
+        playerControls.Player.ToggleNoClip.Enable();
+        playerControls.Player.Move.Enable();
+        playerControls.Player.Look.Enable();
     }
 
-    /// <summary>
-    /// Update is called once per frame
-    /// </summary>
     void Update()
     {
-        PlayerMovementInput = new Vector3(Input.GetAxis("Horizontal"), 0f, Input.GetAxis("Vertical"));
-        PlayerMouseInput = new Vector2(Input.GetAxis("Mouse X"), Input.GetAxis("Mouse Y"));
+        PlayerMovementInput = playerControls.Player.Move.ReadValue<Vector2>();
 
-        if (Input.GetKeyDown(KeyCode.F))
-        {
-            noClip = !noClip;
-            rigidBody.useGravity = !rigidBody.useGravity;
-        }
+        PlayerCameraInput = playerControls.Player.Look.ReadValue<Vector2>();
 
         MovePlayer();
         MoveCamera();

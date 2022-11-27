@@ -7,8 +7,9 @@ using UnityEngine;
 /// </summary>
 public class CubeBehavior : MonoBehaviour
 {
+    [SerializeField] CubeInformation cubeInformation;
+
     GameObject[] cubesNextToThisOne = new GameObject[6];
-    float cubeScale = .5f;
     protected bool isAnchor = true;
 
     /// <summary>
@@ -177,7 +178,7 @@ public class CubeBehavior : MonoBehaviour
 
         for (int i = 0; i < 6; i++)
         {
-            Collider[] colliders = Physics.OverlapSphere(transform.TransformPoint(localDirectionVector3ForSide(i)), .1f);
+            Collider[] colliders = Physics.OverlapSphere(transform.TransformPoint(localDirectionVector3ForSide(i) * cubeInformation.cubeScale), .1f);
 
             foreach (Collider collider in colliders)
             {

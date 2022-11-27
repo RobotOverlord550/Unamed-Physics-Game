@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   displayName: Grass Block
   identifierName: grass_block
-  inventoryIcon: {fileID: 0}
+  inventoryIcon: {fileID: 5936984151439287939, guid: f25b8910b15a45a4c809630dbecc3a2b, type: 3}
   blockPrefab: {fileID: 1496039331673015944, guid: 4ad2a590f4964174ab46466513ac87de, type: 3}

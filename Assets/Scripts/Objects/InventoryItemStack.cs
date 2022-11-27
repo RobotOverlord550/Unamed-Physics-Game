@@ -6,7 +6,6 @@ public class InventoryItemStack
 {
     public Inventory inventoryItem { get; private set; }
     public bool isInfinite { get; private set; }
-
     public int StackSize { get; private set; }
 
     public InventoryItemStack(Inventory inventoryItemParam, bool isInfiniteParam)

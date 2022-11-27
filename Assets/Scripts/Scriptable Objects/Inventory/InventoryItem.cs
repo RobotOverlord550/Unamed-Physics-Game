@@ -7,5 +7,5 @@ public class InventoryItemData : ScriptableObject
 {
     public string displayName;
     public string identifierName;
-    public Sprite inventoryIcon;
+    public GameObject inventoryIcon;
 }

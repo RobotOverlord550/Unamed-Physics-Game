@@ -6,6 +6,7 @@ TagManager:
   tags:
   - MainCanvas
   - InventoryPanel
+  - CommandLine
   layers:
   - Default
   - TransparentFX

@@ -216,6 +216,7 @@ MonoBehaviour:
   jumpForce: 5
   movementForce: 3
   movementVelocity: 10
+  noClip: 0
   rigidBody: {fileID: 5260154346414822992}
   transform: {fileID: 5260154346414823004}
   PlayerCamera: {fileID: 5260154346099566348}
@@ -232,6 +233,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a376e561a65fd144857cff7b35245ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cubeInformation: {fileID: 11400000, guid: 083165f7d51266d4687cd6c635461381, type: 2}
   cubeExample: {fileID: 1496039331673015944, guid: 4ad2a590f4964174ab46466513ac87de, type: 3}
 --- !u!114 &2569052903398630888
 MonoBehaviour:
@@ -245,6 +247,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82e4bed03ec5b5e468028e67b2cbcae0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inventoryPanelExample: {fileID: 3202205382205432943, guid: 45a2219a1702b364f899e395c1899168, type: 3}
+  inventoryPanelTag: InventoryPanel
   inventorySlotImageExample: {fileID: 377396608272469883, guid: 8bcc2502aeb52144680368dfe146497d, type: 3}
+  selectedInventorySlotImageExample: {fileID: 6110903931919201144, guid: 8eab003de24863c4893453049e3df91a, type: 3}
   inventorySize: 10
