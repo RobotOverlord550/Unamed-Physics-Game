@@ -15,13 +15,21 @@ public class @PlayerControls : IInputActionCollection, IDisposable
     ""name"": ""PlayerControls"",
     ""maps"": [
         {
-            ""name"": ""Player"",
-            ""id"": ""42c8092f-2f4c-45d2-acef-b91b3811bcfd"",
+            ""name"": ""Walking"",
+            ""id"": ""4915f5cf-fc29-4618-bab9-b4c86dd430d0"",
             ""actions"": [
+                {
+                    ""name"": ""New action"",
+                    ""type"": ""Button"",
+                    ""id"": ""53f285a4-517a-491f-8748-3b16db3e448b"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
                 {
                     ""name"": ""Move"",
                     ""type"": ""Value"",
-                    ""id"": ""7ae42cd4-9b13-493b-bbf5-755969aa8199"",
+                    ""id"": ""d1eb3a15-2c32-42da-8a5f-ece6e646b65c"",
                     ""expectedControlType"": ""Stick"",
                     ""processors"": """",
                     ""interactions"": """"
@@ -29,7 +37,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 {
                     ""name"": ""Look"",
                     ""type"": ""Value"",
-                    ""id"": ""413c6b60-22d0-4083-a5ff-50096bcf20a0"",
+                    ""id"": ""8d1c142a-aa7e-47dd-b015-d7421c0c47f2"",
                     ""expectedControlType"": ""Vector2"",
                     ""processors"": """",
                     ""interactions"": """"
@@ -37,39 +45,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 {
                     ""name"": ""Jump"",
                     ""type"": ""Button"",
-                    ""id"": ""b57abfa8-6f0d-47ed-acf9-fab05b198b43"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """"
-                },
-                {
-                    ""name"": ""Inventory Slot Select"",
-                    ""type"": ""Value"",
-                    ""id"": ""88242f36-aa2e-4995-ac3d-f6687b984c64"",
-                    ""expectedControlType"": """",
-                    ""processors"": """",
-                    ""interactions"": """"
-                },
-                {
-                    ""name"": ""Inventory Slot Scroll"",
-                    ""type"": ""Value"",
-                    ""id"": ""c77fbacf-c57d-4101-8b46-5d47f204be34"",
-                    ""expectedControlType"": ""Axis"",
-                    ""processors"": """",
-                    ""interactions"": """"
-                },
-                {
-                    ""name"": ""Place Block"",
-                    ""type"": ""Button"",
-                    ""id"": ""49a6d56d-b1bb-4222-8fe6-ff2597b9bf6e"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """"
-                },
-                {
-                    ""name"": ""Break Block"",
-                    ""type"": ""Button"",
-                    ""id"": ""f6b0d38c-ca58-499b-a6d6-276389c64595"",
+                    ""id"": ""ba7150f7-63d2-49f3-b633-a79613abb19b"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
@@ -77,15 +53,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 {
                     ""name"": ""Crouch"",
                     ""type"": ""Button"",
-                    ""id"": ""377079a6-8428-4d90-8b8b-5710d4325547"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """"
-                },
-                {
-                    ""name"": ""Toggle NoClip"",
-                    ""type"": ""Button"",
-                    ""id"": ""d078e8b5-03e1-4eb6-8c0c-9f292bacdf65"",
+                    ""id"": ""ab729363-ae5a-4360-9258-9834818d094f"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
@@ -93,8 +61,19 @@ public class @PlayerControls : IInputActionCollection, IDisposable
             ],
             ""bindings"": [
                 {
+                    ""name"": """",
+                    ""id"": ""d7b6c809-fc53-494f-a267-cdad4243cb4c"",
+                    ""path"": """",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""New action"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
                     ""name"": ""WASD"",
-                    ""id"": ""5d22791d-ae9e-4a21-ad43-9a1e8e199001"",
+                    ""id"": ""9097cc60-b78e-4944-b21b-75b4a2c86477"",
                     ""path"": ""2DVector"",
                     ""interactions"": """",
                     ""processors"": ""NormalizeVector2"",
@@ -105,7 +84,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 },
                 {
                     ""name"": ""up"",
-                    ""id"": ""49611448-622c-42a0-83c0-ff739edadfa4"",
+                    ""id"": ""7904c9a1-a394-464b-8cde-b13e86817348"",
                     ""path"": ""<Keyboard>/w"",
                     ""interactions"": """",
                     ""processors"": """",
@@ -116,7 +95,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 },
                 {
                     ""name"": ""down"",
-                    ""id"": ""2de84b4f-2048-4756-83ca-aabdff54fe78"",
+                    ""id"": ""434a4691-16fd-453b-859b-33350884b7c3"",
                     ""path"": ""<Keyboard>/s"",
                     ""interactions"": """",
                     ""processors"": """",
@@ -127,7 +106,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 },
                 {
                     ""name"": ""left"",
-                    ""id"": ""4cc54a96-1efc-4662-8192-6ad46211e5cb"",
+                    ""id"": ""fb291aad-8ec3-471c-9582-b8994320627e"",
                     ""path"": ""<Keyboard>/a"",
                     ""interactions"": """",
                     ""processors"": """",
@@ -138,7 +117,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 },
                 {
                     ""name"": ""right"",
-                    ""id"": ""144d0181-9796-4faa-9d56-1863a15b74cf"",
+                    ""id"": ""a2ae8c86-4e8a-4837-b97b-4289db294e9e"",
                     ""path"": ""<Keyboard>/d"",
                     ""interactions"": """",
                     ""processors"": """",
@@ -149,172 +128,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""64076955-7b3e-442a-9278-06bc232f0f8e"",
-                    ""path"": ""<Keyboard>/1"",
-                    ""interactions"": """",
-                    ""processors"": ""Scale"",
-                    ""groups"": ""KeyBoard and  Mouse"",
-                    ""action"": ""Inventory Slot Select"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""839af829-9bc4-4b5d-845c-e34c0c921569"",
-                    ""path"": ""<Keyboard>/2"",
-                    ""interactions"": """",
-                    ""processors"": ""Scale(factor=2)"",
-                    ""groups"": ""KeyBoard and  Mouse"",
-                    ""action"": ""Inventory Slot Select"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""e4e97e90-3562-44cb-aba2-31d9a4848cfb"",
-                    ""path"": ""<Keyboard>/3"",
-                    ""interactions"": """",
-                    ""processors"": ""Scale(factor=3)"",
-                    ""groups"": ""KeyBoard and  Mouse"",
-                    ""action"": ""Inventory Slot Select"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""337dde31-0f40-406d-8bf1-aac463298fdf"",
-                    ""path"": ""<Keyboard>/4"",
-                    ""interactions"": """",
-                    ""processors"": ""Scale(factor=4)"",
-                    ""groups"": ""KeyBoard and  Mouse"",
-                    ""action"": ""Inventory Slot Select"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""e926ea2d-3389-4bbf-bf92-ed94bdd45fa2"",
-                    ""path"": ""<Keyboard>/5"",
-                    ""interactions"": """",
-                    ""processors"": ""Scale(factor=5)"",
-                    ""groups"": ""KeyBoard and  Mouse"",
-                    ""action"": ""Inventory Slot Select"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""60ac50ee-12e0-4f53-92ba-ab55cd766082"",
-                    ""path"": ""<Keyboard>/6"",
-                    ""interactions"": """",
-                    ""processors"": ""Scale(factor=6)"",
-                    ""groups"": ""KeyBoard and  Mouse"",
-                    ""action"": ""Inventory Slot Select"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""77c4182e-113a-4a82-9449-89526aca620c"",
-                    ""path"": ""<Keyboard>/7"",
-                    ""interactions"": """",
-                    ""processors"": ""Scale(factor=7)"",
-                    ""groups"": ""KeyBoard and  Mouse"",
-                    ""action"": ""Inventory Slot Select"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""3f233d63-cd59-4e5e-89b5-53eb69136104"",
-                    ""path"": ""<Keyboard>/8"",
-                    ""interactions"": """",
-                    ""processors"": ""Scale(factor=8)"",
-                    ""groups"": ""KeyBoard and  Mouse"",
-                    ""action"": ""Inventory Slot Select"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""62d082d6-2d59-4cbe-8e16-bdaec3f3f236"",
-                    ""path"": ""<Keyboard>/9"",
-                    ""interactions"": """",
-                    ""processors"": ""Scale(factor=9)"",
-                    ""groups"": ""KeyBoard and  Mouse"",
-                    ""action"": ""Inventory Slot Select"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""fb84d67d-67ba-4513-b800-ff5120b0c348"",
-                    ""path"": ""<Keyboard>/0"",
-                    ""interactions"": """",
-                    ""processors"": ""Scale(factor=10)"",
-                    ""groups"": ""KeyBoard and  Mouse"",
-                    ""action"": ""Inventory Slot Select"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""11e28fd6-eea1-416b-8ebd-7ca8a93a7813"",
-                    ""path"": ""<Keyboard>/space"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""KeyBoard and  Mouse"",
-                    ""action"": ""Jump"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""89156d86-2802-4f78-90b2-5e83f3f6d303"",
-                    ""path"": ""<Mouse>/rightButton"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""KeyBoard and  Mouse"",
-                    ""action"": ""Place Block"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""109a6676-c94c-44fa-809f-c772b7ab2c0e"",
-                    ""path"": ""<Mouse>/leftButton"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""KeyBoard and  Mouse"",
-                    ""action"": ""Break Block"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""4055821c-ae23-4bac-a628-953ce82ac52d"",
-                    ""path"": ""<Keyboard>/shift"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""KeyBoard and  Mouse"",
-                    ""action"": ""Crouch"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""e6c650b9-f49c-4789-a31e-4f94bae9b188"",
-                    ""path"": ""<Keyboard>/t"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Toggle NoClip"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""29238ff0-9fe0-4e73-a104-01dff1c6dc6c"",
+                    ""id"": ""cd3b32d6-db8c-4fe0-9b84-66dac0bb225d"",
                     ""path"": ""<Mouse>/delta"",
                     ""interactions"": """",
                     ""processors"": """",
@@ -325,12 +139,366 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""d9012267-bf70-4e2f-beb3-103fcbc24ae4"",
+                    ""id"": ""6bad0697-5cc4-414d-b36f-c4d1106cdd9c"",
+                    ""path"": ""<Keyboard>/space"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""KeyBoard and  Mouse"",
+                    ""action"": ""Jump"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""926a2bde-8810-462a-9756-58c026e070da"",
+                    ""path"": ""<Keyboard>/shift"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""KeyBoard and  Mouse"",
+                    ""action"": ""Crouch"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
+        },
+        {
+            ""name"": ""Universal"",
+            ""id"": ""dea172d7-eb4c-4123-9a82-3cfd7ac1551a"",
+            ""actions"": [
+                {
+                    ""name"": ""Toggle No Clip"",
+                    ""type"": ""Button"",
+                    ""id"": ""800f461b-8ae3-4e01-a37a-a65b43ab58af"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""Place Block"",
+                    ""type"": ""Button"",
+                    ""id"": ""3496dfa0-c836-4d3c-b501-9d531c20e3fe"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""Break Block"",
+                    ""type"": ""Button"",
+                    ""id"": ""990e5b23-9cff-4d73-ace2-3da35093b82c"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""Inventory Slot Select"",
+                    ""type"": ""Value"",
+                    ""id"": ""7419bc0b-aac9-4ca8-a752-11aad8c90a55"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""Inventory Slot Scroll"",
+                    ""type"": ""Value"",
+                    ""id"": ""cb6f972c-5df7-4e23-9f6b-12ed6583ab74"",
+                    ""expectedControlType"": ""Axis"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""6f9a374f-f87f-465c-8ff4-a77233a8fe7e"",
+                    ""path"": ""<Keyboard>/t"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Toggle No Clip"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""b9c53a94-abc8-40b8-84db-73249ff7c40d"",
+                    ""path"": ""<Mouse>/rightButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""KeyBoard and  Mouse"",
+                    ""action"": ""Place Block"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""cf0236a3-2bc1-42a4-b67f-4a4396c19518"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""KeyBoard and  Mouse"",
+                    ""action"": ""Break Block"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""93642a10-dfdd-453e-bb25-f9206c725706"",
+                    ""path"": ""<Keyboard>/1"",
+                    ""interactions"": """",
+                    ""processors"": ""Scale"",
+                    ""groups"": ""KeyBoard and  Mouse"",
+                    ""action"": ""Inventory Slot Select"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""376d3449-19ff-4a81-a55a-cc92a87c0a95"",
+                    ""path"": ""<Keyboard>/2"",
+                    ""interactions"": """",
+                    ""processors"": ""Scale(factor=2)"",
+                    ""groups"": ""KeyBoard and  Mouse"",
+                    ""action"": ""Inventory Slot Select"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""378aa6d2-33e1-4836-a178-f34d99c470cd"",
+                    ""path"": ""<Keyboard>/3"",
+                    ""interactions"": """",
+                    ""processors"": ""Scale(factor=3)"",
+                    ""groups"": ""KeyBoard and  Mouse"",
+                    ""action"": ""Inventory Slot Select"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""ec1b84ca-b6eb-4a14-bcef-8f97fd59096d"",
+                    ""path"": ""<Keyboard>/4"",
+                    ""interactions"": """",
+                    ""processors"": ""Scale(factor=4)"",
+                    ""groups"": ""KeyBoard and  Mouse"",
+                    ""action"": ""Inventory Slot Select"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""a161d90f-ffe6-477b-806b-47e79828491b"",
+                    ""path"": ""<Keyboard>/5"",
+                    ""interactions"": """",
+                    ""processors"": ""Scale(factor=5)"",
+                    ""groups"": ""KeyBoard and  Mouse"",
+                    ""action"": ""Inventory Slot Select"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""c68115c6-6b2d-4cd5-99d0-e87207601c41"",
+                    ""path"": ""<Keyboard>/6"",
+                    ""interactions"": """",
+                    ""processors"": ""Scale(factor=6)"",
+                    ""groups"": ""KeyBoard and  Mouse"",
+                    ""action"": ""Inventory Slot Select"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""defb6c5b-ca80-4f3f-8700-4a72b3c775f7"",
+                    ""path"": ""<Keyboard>/7"",
+                    ""interactions"": """",
+                    ""processors"": ""Scale(factor=7)"",
+                    ""groups"": ""KeyBoard and  Mouse"",
+                    ""action"": ""Inventory Slot Select"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""66f0af50-a646-4170-977a-3a40c408759f"",
+                    ""path"": ""<Keyboard>/8"",
+                    ""interactions"": """",
+                    ""processors"": ""Scale(factor=8)"",
+                    ""groups"": ""KeyBoard and  Mouse"",
+                    ""action"": ""Inventory Slot Select"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""d393c598-8659-4087-9024-c1831a1604cb"",
+                    ""path"": ""<Keyboard>/9"",
+                    ""interactions"": """",
+                    ""processors"": ""Scale(factor=9)"",
+                    ""groups"": ""KeyBoard and  Mouse"",
+                    ""action"": ""Inventory Slot Select"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""4efea714-67b3-40c7-b0b8-b2e3525f5e1e"",
+                    ""path"": ""<Keyboard>/0"",
+                    ""interactions"": """",
+                    ""processors"": ""Scale(factor=10)"",
+                    ""groups"": ""KeyBoard and  Mouse"",
+                    ""action"": ""Inventory Slot Select"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""4617957b-a79f-4084-b2fd-a6e1aa0147c2"",
                     ""path"": ""<Mouse>/scroll/y"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""KeyBoard and  Mouse"",
                     ""action"": ""Inventory Slot Scroll"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
+        },
+        {
+            ""name"": ""No Clip"",
+            ""id"": ""5ee7b277-775f-46be-a125-fb93ee8463dd"",
+            ""actions"": [
+                {
+                    ""name"": ""New action"",
+                    ""type"": ""Button"",
+                    ""id"": ""0af9c615-7ca9-41dd-8cae-4e7937aacdaf"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""Forward"",
+                    ""type"": ""Button"",
+                    ""id"": ""fbbb0433-7d5d-4803-8c52-39f957b20f97"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""Backwards"",
+                    ""type"": ""Button"",
+                    ""id"": ""4fdccee5-efcb-416a-b8eb-600173855713"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""Left"",
+                    ""type"": ""Button"",
+                    ""id"": ""91db5b3a-45e2-4012-ad30-4ae89da47f34"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""Right"",
+                    ""type"": ""Button"",
+                    ""id"": ""cb77e5da-82a5-4ea5-8190-22b8742f5d57"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""Up"",
+                    ""type"": ""Button"",
+                    ""id"": ""b4f33c99-5a7f-40b2-ac11-78aad1f617be"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""Down"",
+                    ""type"": ""Button"",
+                    ""id"": ""0c481bf2-4320-42ce-8a58-57f7b74d51d4"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""b7106c76-861d-4e98-9fde-ecbb2594b7d7"",
+                    ""path"": """",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""New action"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""61f59bb9-bb49-4148-9b40-d31d245df9cd"",
+                    ""path"": ""<Keyboard>/w"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Forward"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""572cf6d7-9814-47a4-940a-e7807078b5e4"",
+                    ""path"": ""<Keyboard>/s"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Backwards"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""9c331710-4869-4843-87cd-0914aaaf0dc8"",
+                    ""path"": ""<Keyboard>/a"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Left"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""6848f818-57a5-4fef-9467-c36c3e1537a2"",
+                    ""path"": ""<Keyboard>/d"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Right"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""6ee80686-c835-467b-92c8-1b0da22f563f"",
+                    ""path"": ""<Keyboard>/space"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Up"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""acf32534-27c9-4a83-96a3-88d0208d9084"",
+                    ""path"": ""<Keyboard>/shift"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Down"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -356,17 +524,29 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         }
     ]
 }");
-        // Player
-        m_Player = asset.FindActionMap("Player", throwIfNotFound: true);
-        m_Player_Move = m_Player.FindAction("Move", throwIfNotFound: true);
-        m_Player_Look = m_Player.FindAction("Look", throwIfNotFound: true);
-        m_Player_Jump = m_Player.FindAction("Jump", throwIfNotFound: true);
-        m_Player_InventorySlotSelect = m_Player.FindAction("Inventory Slot Select", throwIfNotFound: true);
-        m_Player_InventorySlotScroll = m_Player.FindAction("Inventory Slot Scroll", throwIfNotFound: true);
-        m_Player_PlaceBlock = m_Player.FindAction("Place Block", throwIfNotFound: true);
-        m_Player_BreakBlock = m_Player.FindAction("Break Block", throwIfNotFound: true);
-        m_Player_Crouch = m_Player.FindAction("Crouch", throwIfNotFound: true);
-        m_Player_ToggleNoClip = m_Player.FindAction("Toggle NoClip", throwIfNotFound: true);
+        // Walking
+        m_Walking = asset.FindActionMap("Walking", throwIfNotFound: true);
+        m_Walking_Newaction = m_Walking.FindAction("New action", throwIfNotFound: true);
+        m_Walking_Move = m_Walking.FindAction("Move", throwIfNotFound: true);
+        m_Walking_Look = m_Walking.FindAction("Look", throwIfNotFound: true);
+        m_Walking_Jump = m_Walking.FindAction("Jump", throwIfNotFound: true);
+        m_Walking_Crouch = m_Walking.FindAction("Crouch", throwIfNotFound: true);
+        // Universal
+        m_Universal = asset.FindActionMap("Universal", throwIfNotFound: true);
+        m_Universal_ToggleNoClip = m_Universal.FindAction("Toggle No Clip", throwIfNotFound: true);
+        m_Universal_PlaceBlock = m_Universal.FindAction("Place Block", throwIfNotFound: true);
+        m_Universal_BreakBlock = m_Universal.FindAction("Break Block", throwIfNotFound: true);
+        m_Universal_InventorySlotSelect = m_Universal.FindAction("Inventory Slot Select", throwIfNotFound: true);
+        m_Universal_InventorySlotScroll = m_Universal.FindAction("Inventory Slot Scroll", throwIfNotFound: true);
+        // No Clip
+        m_NoClip = asset.FindActionMap("No Clip", throwIfNotFound: true);
+        m_NoClip_Newaction = m_NoClip.FindAction("New action", throwIfNotFound: true);
+        m_NoClip_Forward = m_NoClip.FindAction("Forward", throwIfNotFound: true);
+        m_NoClip_Backwards = m_NoClip.FindAction("Backwards", throwIfNotFound: true);
+        m_NoClip_Left = m_NoClip.FindAction("Left", throwIfNotFound: true);
+        m_NoClip_Right = m_NoClip.FindAction("Right", throwIfNotFound: true);
+        m_NoClip_Up = m_NoClip.FindAction("Up", throwIfNotFound: true);
+        m_NoClip_Down = m_NoClip.FindAction("Down", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -413,71 +593,54 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         asset.Disable();
     }
 
-    // Player
-    private readonly InputActionMap m_Player;
-    private IPlayerActions m_PlayerActionsCallbackInterface;
-    private readonly InputAction m_Player_Move;
-    private readonly InputAction m_Player_Look;
-    private readonly InputAction m_Player_Jump;
-    private readonly InputAction m_Player_InventorySlotSelect;
-    private readonly InputAction m_Player_InventorySlotScroll;
-    private readonly InputAction m_Player_PlaceBlock;
-    private readonly InputAction m_Player_BreakBlock;
-    private readonly InputAction m_Player_Crouch;
-    private readonly InputAction m_Player_ToggleNoClip;
-    public struct PlayerActions
+    // Walking
+    private readonly InputActionMap m_Walking;
+    private IWalkingActions m_WalkingActionsCallbackInterface;
+    private readonly InputAction m_Walking_Newaction;
+    private readonly InputAction m_Walking_Move;
+    private readonly InputAction m_Walking_Look;
+    private readonly InputAction m_Walking_Jump;
+    private readonly InputAction m_Walking_Crouch;
+    public struct WalkingActions
     {
         private @PlayerControls m_Wrapper;
-        public PlayerActions(@PlayerControls wrapper) { m_Wrapper = wrapper; }
-        public InputAction @Move => m_Wrapper.m_Player_Move;
-        public InputAction @Look => m_Wrapper.m_Player_Look;
-        public InputAction @Jump => m_Wrapper.m_Player_Jump;
-        public InputAction @InventorySlotSelect => m_Wrapper.m_Player_InventorySlotSelect;
-        public InputAction @InventorySlotScroll => m_Wrapper.m_Player_InventorySlotScroll;
-        public InputAction @PlaceBlock => m_Wrapper.m_Player_PlaceBlock;
-        public InputAction @BreakBlock => m_Wrapper.m_Player_BreakBlock;
-        public InputAction @Crouch => m_Wrapper.m_Player_Crouch;
-        public InputAction @ToggleNoClip => m_Wrapper.m_Player_ToggleNoClip;
-        public InputActionMap Get() { return m_Wrapper.m_Player; }
+        public WalkingActions(@PlayerControls wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Newaction => m_Wrapper.m_Walking_Newaction;
+        public InputAction @Move => m_Wrapper.m_Walking_Move;
+        public InputAction @Look => m_Wrapper.m_Walking_Look;
+        public InputAction @Jump => m_Wrapper.m_Walking_Jump;
+        public InputAction @Crouch => m_Wrapper.m_Walking_Crouch;
+        public InputActionMap Get() { return m_Wrapper.m_Walking; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
         public bool enabled => Get().enabled;
-        public static implicit operator InputActionMap(PlayerActions set) { return set.Get(); }
-        public void SetCallbacks(IPlayerActions instance)
+        public static implicit operator InputActionMap(WalkingActions set) { return set.Get(); }
+        public void SetCallbacks(IWalkingActions instance)
         {
-            if (m_Wrapper.m_PlayerActionsCallbackInterface != null)
+            if (m_Wrapper.m_WalkingActionsCallbackInterface != null)
             {
-                @Move.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMove;
-                @Move.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMove;
-                @Move.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMove;
-                @Look.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnLook;
-                @Look.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnLook;
-                @Look.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnLook;
-                @Jump.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnJump;
-                @Jump.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnJump;
-                @Jump.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnJump;
-                @InventorySlotSelect.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnInventorySlotSelect;
-                @InventorySlotSelect.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnInventorySlotSelect;
-                @InventorySlotSelect.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnInventorySlotSelect;
-                @InventorySlotScroll.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnInventorySlotScroll;
-                @InventorySlotScroll.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnInventorySlotScroll;
-                @InventorySlotScroll.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnInventorySlotScroll;
-                @PlaceBlock.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnPlaceBlock;
-                @PlaceBlock.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnPlaceBlock;
-                @PlaceBlock.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnPlaceBlock;
-                @BreakBlock.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnBreakBlock;
-                @BreakBlock.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnBreakBlock;
-                @BreakBlock.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnBreakBlock;
-                @Crouch.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnCrouch;
-                @Crouch.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnCrouch;
-                @Crouch.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnCrouch;
-                @ToggleNoClip.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnToggleNoClip;
-                @ToggleNoClip.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnToggleNoClip;
-                @ToggleNoClip.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnToggleNoClip;
+                @Newaction.started -= m_Wrapper.m_WalkingActionsCallbackInterface.OnNewaction;
+                @Newaction.performed -= m_Wrapper.m_WalkingActionsCallbackInterface.OnNewaction;
+                @Newaction.canceled -= m_Wrapper.m_WalkingActionsCallbackInterface.OnNewaction;
+                @Move.started -= m_Wrapper.m_WalkingActionsCallbackInterface.OnMove;
+                @Move.performed -= m_Wrapper.m_WalkingActionsCallbackInterface.OnMove;
+                @Move.canceled -= m_Wrapper.m_WalkingActionsCallbackInterface.OnMove;
+                @Look.started -= m_Wrapper.m_WalkingActionsCallbackInterface.OnLook;
+                @Look.performed -= m_Wrapper.m_WalkingActionsCallbackInterface.OnLook;
+                @Look.canceled -= m_Wrapper.m_WalkingActionsCallbackInterface.OnLook;
+                @Jump.started -= m_Wrapper.m_WalkingActionsCallbackInterface.OnJump;
+                @Jump.performed -= m_Wrapper.m_WalkingActionsCallbackInterface.OnJump;
+                @Jump.canceled -= m_Wrapper.m_WalkingActionsCallbackInterface.OnJump;
+                @Crouch.started -= m_Wrapper.m_WalkingActionsCallbackInterface.OnCrouch;
+                @Crouch.performed -= m_Wrapper.m_WalkingActionsCallbackInterface.OnCrouch;
+                @Crouch.canceled -= m_Wrapper.m_WalkingActionsCallbackInterface.OnCrouch;
             }
-            m_Wrapper.m_PlayerActionsCallbackInterface = instance;
+            m_Wrapper.m_WalkingActionsCallbackInterface = instance;
             if (instance != null)
             {
+                @Newaction.started += instance.OnNewaction;
+                @Newaction.performed += instance.OnNewaction;
+                @Newaction.canceled += instance.OnNewaction;
                 @Move.started += instance.OnMove;
                 @Move.performed += instance.OnMove;
                 @Move.canceled += instance.OnMove;
@@ -487,28 +650,159 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 @Jump.started += instance.OnJump;
                 @Jump.performed += instance.OnJump;
                 @Jump.canceled += instance.OnJump;
-                @InventorySlotSelect.started += instance.OnInventorySlotSelect;
-                @InventorySlotSelect.performed += instance.OnInventorySlotSelect;
-                @InventorySlotSelect.canceled += instance.OnInventorySlotSelect;
-                @InventorySlotScroll.started += instance.OnInventorySlotScroll;
-                @InventorySlotScroll.performed += instance.OnInventorySlotScroll;
-                @InventorySlotScroll.canceled += instance.OnInventorySlotScroll;
+                @Crouch.started += instance.OnCrouch;
+                @Crouch.performed += instance.OnCrouch;
+                @Crouch.canceled += instance.OnCrouch;
+            }
+        }
+    }
+    public WalkingActions @Walking => new WalkingActions(this);
+
+    // Universal
+    private readonly InputActionMap m_Universal;
+    private IUniversalActions m_UniversalActionsCallbackInterface;
+    private readonly InputAction m_Universal_ToggleNoClip;
+    private readonly InputAction m_Universal_PlaceBlock;
+    private readonly InputAction m_Universal_BreakBlock;
+    private readonly InputAction m_Universal_InventorySlotSelect;
+    private readonly InputAction m_Universal_InventorySlotScroll;
+    public struct UniversalActions
+    {
+        private @PlayerControls m_Wrapper;
+        public UniversalActions(@PlayerControls wrapper) { m_Wrapper = wrapper; }
+        public InputAction @ToggleNoClip => m_Wrapper.m_Universal_ToggleNoClip;
+        public InputAction @PlaceBlock => m_Wrapper.m_Universal_PlaceBlock;
+        public InputAction @BreakBlock => m_Wrapper.m_Universal_BreakBlock;
+        public InputAction @InventorySlotSelect => m_Wrapper.m_Universal_InventorySlotSelect;
+        public InputAction @InventorySlotScroll => m_Wrapper.m_Universal_InventorySlotScroll;
+        public InputActionMap Get() { return m_Wrapper.m_Universal; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(UniversalActions set) { return set.Get(); }
+        public void SetCallbacks(IUniversalActions instance)
+        {
+            if (m_Wrapper.m_UniversalActionsCallbackInterface != null)
+            {
+                @ToggleNoClip.started -= m_Wrapper.m_UniversalActionsCallbackInterface.OnToggleNoClip;
+                @ToggleNoClip.performed -= m_Wrapper.m_UniversalActionsCallbackInterface.OnToggleNoClip;
+                @ToggleNoClip.canceled -= m_Wrapper.m_UniversalActionsCallbackInterface.OnToggleNoClip;
+                @PlaceBlock.started -= m_Wrapper.m_UniversalActionsCallbackInterface.OnPlaceBlock;
+                @PlaceBlock.performed -= m_Wrapper.m_UniversalActionsCallbackInterface.OnPlaceBlock;
+                @PlaceBlock.canceled -= m_Wrapper.m_UniversalActionsCallbackInterface.OnPlaceBlock;
+                @BreakBlock.started -= m_Wrapper.m_UniversalActionsCallbackInterface.OnBreakBlock;
+                @BreakBlock.performed -= m_Wrapper.m_UniversalActionsCallbackInterface.OnBreakBlock;
+                @BreakBlock.canceled -= m_Wrapper.m_UniversalActionsCallbackInterface.OnBreakBlock;
+                @InventorySlotSelect.started -= m_Wrapper.m_UniversalActionsCallbackInterface.OnInventorySlotSelect;
+                @InventorySlotSelect.performed -= m_Wrapper.m_UniversalActionsCallbackInterface.OnInventorySlotSelect;
+                @InventorySlotSelect.canceled -= m_Wrapper.m_UniversalActionsCallbackInterface.OnInventorySlotSelect;
+                @InventorySlotScroll.started -= m_Wrapper.m_UniversalActionsCallbackInterface.OnInventorySlotScroll;
+                @InventorySlotScroll.performed -= m_Wrapper.m_UniversalActionsCallbackInterface.OnInventorySlotScroll;
+                @InventorySlotScroll.canceled -= m_Wrapper.m_UniversalActionsCallbackInterface.OnInventorySlotScroll;
+            }
+            m_Wrapper.m_UniversalActionsCallbackInterface = instance;
+            if (instance != null)
+            {
+                @ToggleNoClip.started += instance.OnToggleNoClip;
+                @ToggleNoClip.performed += instance.OnToggleNoClip;
+                @ToggleNoClip.canceled += instance.OnToggleNoClip;
                 @PlaceBlock.started += instance.OnPlaceBlock;
                 @PlaceBlock.performed += instance.OnPlaceBlock;
                 @PlaceBlock.canceled += instance.OnPlaceBlock;
                 @BreakBlock.started += instance.OnBreakBlock;
                 @BreakBlock.performed += instance.OnBreakBlock;
                 @BreakBlock.canceled += instance.OnBreakBlock;
-                @Crouch.started += instance.OnCrouch;
-                @Crouch.performed += instance.OnCrouch;
-                @Crouch.canceled += instance.OnCrouch;
-                @ToggleNoClip.started += instance.OnToggleNoClip;
-                @ToggleNoClip.performed += instance.OnToggleNoClip;
-                @ToggleNoClip.canceled += instance.OnToggleNoClip;
+                @InventorySlotSelect.started += instance.OnInventorySlotSelect;
+                @InventorySlotSelect.performed += instance.OnInventorySlotSelect;
+                @InventorySlotSelect.canceled += instance.OnInventorySlotSelect;
+                @InventorySlotScroll.started += instance.OnInventorySlotScroll;
+                @InventorySlotScroll.performed += instance.OnInventorySlotScroll;
+                @InventorySlotScroll.canceled += instance.OnInventorySlotScroll;
             }
         }
     }
-    public PlayerActions @Player => new PlayerActions(this);
+    public UniversalActions @Universal => new UniversalActions(this);
+
+    // No Clip
+    private readonly InputActionMap m_NoClip;
+    private INoClipActions m_NoClipActionsCallbackInterface;
+    private readonly InputAction m_NoClip_Newaction;
+    private readonly InputAction m_NoClip_Forward;
+    private readonly InputAction m_NoClip_Backwards;
+    private readonly InputAction m_NoClip_Left;
+    private readonly InputAction m_NoClip_Right;
+    private readonly InputAction m_NoClip_Up;
+    private readonly InputAction m_NoClip_Down;
+    public struct NoClipActions
+    {
+        private @PlayerControls m_Wrapper;
+        public NoClipActions(@PlayerControls wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Newaction => m_Wrapper.m_NoClip_Newaction;
+        public InputAction @Forward => m_Wrapper.m_NoClip_Forward;
+        public InputAction @Backwards => m_Wrapper.m_NoClip_Backwards;
+        public InputAction @Left => m_Wrapper.m_NoClip_Left;
+        public InputAction @Right => m_Wrapper.m_NoClip_Right;
+        public InputAction @Up => m_Wrapper.m_NoClip_Up;
+        public InputAction @Down => m_Wrapper.m_NoClip_Down;
+        public InputActionMap Get() { return m_Wrapper.m_NoClip; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(NoClipActions set) { return set.Get(); }
+        public void SetCallbacks(INoClipActions instance)
+        {
+            if (m_Wrapper.m_NoClipActionsCallbackInterface != null)
+            {
+                @Newaction.started -= m_Wrapper.m_NoClipActionsCallbackInterface.OnNewaction;
+                @Newaction.performed -= m_Wrapper.m_NoClipActionsCallbackInterface.OnNewaction;
+                @Newaction.canceled -= m_Wrapper.m_NoClipActionsCallbackInterface.OnNewaction;
+                @Forward.started -= m_Wrapper.m_NoClipActionsCallbackInterface.OnForward;
+                @Forward.performed -= m_Wrapper.m_NoClipActionsCallbackInterface.OnForward;
+                @Forward.canceled -= m_Wrapper.m_NoClipActionsCallbackInterface.OnForward;
+                @Backwards.started -= m_Wrapper.m_NoClipActionsCallbackInterface.OnBackwards;
+                @Backwards.performed -= m_Wrapper.m_NoClipActionsCallbackInterface.OnBackwards;
+                @Backwards.canceled -= m_Wrapper.m_NoClipActionsCallbackInterface.OnBackwards;
+                @Left.started -= m_Wrapper.m_NoClipActionsCallbackInterface.OnLeft;
+                @Left.performed -= m_Wrapper.m_NoClipActionsCallbackInterface.OnLeft;
+                @Left.canceled -= m_Wrapper.m_NoClipActionsCallbackInterface.OnLeft;
+                @Right.started -= m_Wrapper.m_NoClipActionsCallbackInterface.OnRight;
+                @Right.performed -= m_Wrapper.m_NoClipActionsCallbackInterface.OnRight;
+                @Right.canceled -= m_Wrapper.m_NoClipActionsCallbackInterface.OnRight;
+                @Up.started -= m_Wrapper.m_NoClipActionsCallbackInterface.OnUp;
+                @Up.performed -= m_Wrapper.m_NoClipActionsCallbackInterface.OnUp;
+                @Up.canceled -= m_Wrapper.m_NoClipActionsCallbackInterface.OnUp;
+                @Down.started -= m_Wrapper.m_NoClipActionsCallbackInterface.OnDown;
+                @Down.performed -= m_Wrapper.m_NoClipActionsCallbackInterface.OnDown;
+                @Down.canceled -= m_Wrapper.m_NoClipActionsCallbackInterface.OnDown;
+            }
+            m_Wrapper.m_NoClipActionsCallbackInterface = instance;
+            if (instance != null)
+            {
+                @Newaction.started += instance.OnNewaction;
+                @Newaction.performed += instance.OnNewaction;
+                @Newaction.canceled += instance.OnNewaction;
+                @Forward.started += instance.OnForward;
+                @Forward.performed += instance.OnForward;
+                @Forward.canceled += instance.OnForward;
+                @Backwards.started += instance.OnBackwards;
+                @Backwards.performed += instance.OnBackwards;
+                @Backwards.canceled += instance.OnBackwards;
+                @Left.started += instance.OnLeft;
+                @Left.performed += instance.OnLeft;
+                @Left.canceled += instance.OnLeft;
+                @Right.started += instance.OnRight;
+                @Right.performed += instance.OnRight;
+                @Right.canceled += instance.OnRight;
+                @Up.started += instance.OnUp;
+                @Up.performed += instance.OnUp;
+                @Up.canceled += instance.OnUp;
+                @Down.started += instance.OnDown;
+                @Down.performed += instance.OnDown;
+                @Down.canceled += instance.OnDown;
+            }
+        }
+    }
+    public NoClipActions @NoClip => new NoClipActions(this);
     private int m_KeyBoardandMouseSchemeIndex = -1;
     public InputControlScheme KeyBoardandMouseScheme
     {
@@ -518,16 +812,30 @@ public class @PlayerControls : IInputActionCollection, IDisposable
             return asset.controlSchemes[m_KeyBoardandMouseSchemeIndex];
         }
     }
-    public interface IPlayerActions
+    public interface IWalkingActions
     {
+        void OnNewaction(InputAction.CallbackContext context);
         void OnMove(InputAction.CallbackContext context);
         void OnLook(InputAction.CallbackContext context);
         void OnJump(InputAction.CallbackContext context);
-        void OnInventorySlotSelect(InputAction.CallbackContext context);
-        void OnInventorySlotScroll(InputAction.CallbackContext context);
+        void OnCrouch(InputAction.CallbackContext context);
+    }
+    public interface IUniversalActions
+    {
+        void OnToggleNoClip(InputAction.CallbackContext context);
         void OnPlaceBlock(InputAction.CallbackContext context);
         void OnBreakBlock(InputAction.CallbackContext context);
-        void OnCrouch(InputAction.CallbackContext context);
-        void OnToggleNoClip(InputAction.CallbackContext context);
+        void OnInventorySlotSelect(InputAction.CallbackContext context);
+        void OnInventorySlotScroll(InputAction.CallbackContext context);
+    }
+    public interface INoClipActions
+    {
+        void OnNewaction(InputAction.CallbackContext context);
+        void OnForward(InputAction.CallbackContext context);
+        void OnBackwards(InputAction.CallbackContext context);
+        void OnLeft(InputAction.CallbackContext context);
+        void OnRight(InputAction.CallbackContext context);
+        void OnUp(InputAction.CallbackContext context);
+        void OnDown(InputAction.CallbackContext context);
     }
 }

@@ -57,7 +57,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 90.8
+  field of view: 60
   orthographic: 0
   orthographic size: 5
   m_Depth: 0
@@ -99,6 +99,7 @@ GameObject:
   - component: {fileID: 5260154346414822999}
   - component: {fileID: 3677025485979252743}
   - component: {fileID: 2569052903398630888}
+  - component: {fileID: 4772721346456265459}
   m_Layer: 0
   m_Name: Character
   m_TagString: Untagged
@@ -212,10 +213,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 188a30d19f512834d9d44413ef0d5be9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameraSensitivity: 3
+  cameraSensitivity: 0.2
   jumpForce: 5
   movementForce: 3
-  movementVelocity: 10
+  movementVelocity: 5
   noClip: 0
   rigidBody: {fileID: 5260154346414822992}
   transform: {fileID: 5260154346414823004}
@@ -234,7 +235,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeInformation: {fileID: 11400000, guid: 083165f7d51266d4687cd6c635461381, type: 2}
-  cubeExample: {fileID: 1496039331673015944, guid: 4ad2a590f4964174ab46466513ac87de, type: 3}
+  cubeExample: {fileID: 8619777295928698474, guid: 970af96f41b1e4848a0d959f4ccb29b4, type: 3}
 --- !u!114 &2569052903398630888
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -251,3 +252,15 @@ MonoBehaviour:
   inventorySlotImageExample: {fileID: 377396608272469883, guid: 8bcc2502aeb52144680368dfe146497d, type: 3}
   selectedInventorySlotImageExample: {fileID: 6110903931919201144, guid: 8eab003de24863c4893453049e3df91a, type: 3}
   inventorySize: 10
+--- !u!114 &4772721346456265459
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5260154346414822998}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15a7dd0e7c239364182bb60b50ed5ce8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

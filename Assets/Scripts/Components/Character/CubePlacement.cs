@@ -81,7 +81,7 @@ public class CubePlacement : MonoBehaviour
 
     private void OnEnable()
     {
-        playerControls.Player.PlaceBlock.performed += DoCubePlace;
-        playerControls.Player.BreakBlock.performed += DoCubeBreak;
+        playerControls.Universal.PlaceBlock.started += DoCubePlace;
+        playerControls.Universal.BreakBlock.started += DoCubeBreak;
     }
 }

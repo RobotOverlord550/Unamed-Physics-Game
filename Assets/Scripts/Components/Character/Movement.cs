@@ -15,7 +15,6 @@ public class Movement : MonoBehaviour
     [SerializeField] float jumpForce;
     [SerializeField] float movementForce;
     [SerializeField] float movementVelocity;
-    [SerializeField] bool noClip = false;
 
     [SerializeField] Rigidbody rigidBody;
     [SerializeField] Transform transform;
@@ -42,11 +41,7 @@ public class Movement : MonoBehaviour
 
     private void DoJump(InputAction.CallbackContext obj)
     {
-        if (noClip)
-        {
-            rigidBody.velocity = new Vector3(rigidBody.velocity.x, movementVelocity, rigidBody.velocity.z);
-        }
-        else if(isGrounded())
+        if(isGrounded())
         {
             rigidBody.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
         }
@@ -54,16 +49,6 @@ public class Movement : MonoBehaviour
 
     private void DoCrouch(InputAction.CallbackContext obj)
     {
-        if (noClip)
-        {
-            rigidBody.velocity = new Vector3(rigidBody.velocity.x, -movementVelocity, rigidBody.velocity.z);
-        }
-    }
-
-    private void toggleNoClip(InputAction.CallbackContext obj)
-    {
-        noClip = !noClip;
-        rigidBody.useGravity = !rigidBody.useGravity;
     }
 
     /// <summary>
@@ -82,26 +67,19 @@ public class Movement : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
 
         playerControls = GetComponent<PlayerControlsManager>().playerControls;
-
-        playerControls.Player.Jump.started += DoJump;
-        playerControls.Player.Crouch.started += DoCrouch;
-        playerControls.Player.ToggleNoClip.started += toggleNoClip;
     }
 
     private void OnEnable()
     {
-        playerControls.Player.Jump.Enable();
-        playerControls.Player.Crouch.Enable();
-        playerControls.Player.ToggleNoClip.Enable();
-        playerControls.Player.Move.Enable();
-        playerControls.Player.Look.Enable();
+        playerControls.Walking.Jump.started += DoJump;
+        playerControls.Walking.Crouch.started += DoCrouch;
     }
 
     void Update()
     {
-        PlayerMovementInput = playerControls.Player.Move.ReadValue<Vector2>();
+        PlayerMovementInput = playerControls.Walking.Move.ReadValue<Vector2>();
 
-        PlayerCameraInput = playerControls.Player.Look.ReadValue<Vector2>();
+        PlayerCameraInput = playerControls.Walking.Look.ReadValue<Vector2>();
 
         MovePlayer();
         MoveCamera();

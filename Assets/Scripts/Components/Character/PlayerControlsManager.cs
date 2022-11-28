@@ -6,6 +6,8 @@ public class PlayerControlsManager : MonoBehaviour
 {
     public PlayerControls playerControls;
 
+    public bool noClip = false;
+
     private void Awake()
     {
         playerControls = new PlayerControls();
@@ -13,11 +15,31 @@ public class PlayerControlsManager : MonoBehaviour
 
     private void OnEnable()
     {
-        playerControls.Enable();
+        playerControls.Universal.Enable();
+        playerControls.Walking.Enable();
     }
 
     private void OnDisable()
     {
         playerControls.Disable();
+    }
+
+    private void Update()
+    {
+        if (playerControls.Universal.ToggleNoClip.triggered)
+        {
+            noClip = !noClip;
+
+            if (noClip)
+            {
+                playerControls.Walking.Disable();
+                playerControls.NoClip.Enable();
+            }
+            else
+            {
+                playerControls.Walking.Enable();
+                playerControls.NoClip.Disable();
+            }
+        }
     }
 }

@@ -4,12 +4,16 @@ using UnityEngine.InputSystem;
 
 public class Inventory : MonoBehaviour
 {
-    [SerializeField] string inventoryPanelTag;
+    [SerializeField] string inventoryPanelTag, mainCanvasTag;
     [SerializeField] GameObject inventorySlotImageExample, selectedInventorySlotImageExample;
     [SerializeField] int inventorySize = 10;
 
     PlayerControls playerControls;
     GameObject inventoryPanel;
+    GameObject mainCanvas;
+    GameObject selectedInventorySlotOverGraphic;
+    GameObject selectedInventorySlot = null;
+
     InventoryItemStack[] inventory;
     int selectedSlot = 1;
     bool selectedSlotChanged = false;
@@ -19,15 +23,15 @@ public class Inventory : MonoBehaviour
     /// </summary>
     void updateSelectedSlot()
     {
-        if (playerControls.Player.InventorySlotSelect.triggered)
+        if (playerControls.Universal.InventorySlotSelect.triggered)
         {
-            selectedSlot = (int)Math.Round(playerControls.Player.InventorySlotSelect.ReadValue<float>());
+            selectedSlot = (int)Math.Round(playerControls.Universal.InventorySlotSelect.ReadValue<float>());
 
             selectedSlotChanged = true;
         }
-        else if (playerControls.Player.InventorySlotScroll.triggered)
+        else if (playerControls.Universal.InventorySlotScroll.triggered)
         {
-            float input = playerControls.Player.InventorySlotScroll.ReadValue<float>();
+            float input = playerControls.Universal.InventorySlotScroll.ReadValue<float>();
 
             if (input > 0)
             {
@@ -65,49 +69,33 @@ public class Inventory : MonoBehaviour
     /// </summary>
     void updateInventoryGraphics()
     {
-
-
-        void instantiateGameObjects(int i)
-        {
-            GameObject inventorySlot;
-            Transform inventorySlotTransform;
-
-            if(i == selectedSlot)
-            {
-                inventorySlot = Instantiate<GameObject>(selectedInventorySlotImageExample);
-            }
-            else
-            {
-                inventorySlot = Instantiate<GameObject>(inventorySlotImageExample);
-            }
-
-            inventorySlotTransform = inventorySlot.GetComponent<Transform>();
-
-            inventorySlotTransform.SetParent(inventoryPanel.GetComponent<Transform>());
-
-            if (inventory[i] != null)
-            {
-                GameObject Icon = Instantiate<GameObject>(inventory[i].inventoryItem.inventorySlotImageExample);
-
-                Icon.GetComponent<Transform>().SetParent(inventorySlotTransform);
-            }
-        }
-
         foreach(Transform child in inventoryPanel.GetComponent<Transform>())
         {
             Destroy(child.gameObject);
         }
 
-        for(int i = 1; i <= inventorySize; i++)
+        for(int i = 0; i < inventorySize; i++)
         {
-            instantiateGameObjects(i);
+            GameObject inventorySlot = Instantiate<GameObject>(inventorySlotImageExample);
+            Transform inventorySlotTransform = inventorySlot.GetComponent<Transform>();
+
+            inventorySlotTransform.SetParent(inventoryPanel.GetComponent<Transform>(), false);
+
+            if(i == selectedSlot - 1)
+            {
+                selectedInventorySlot = inventorySlot;
+            }
         }
+
+        selectedInventorySlotOverGraphic.transform.SetParent(mainCanvas.transform, false);
     }
 
     private void Awake()
-    {
+    {   
         playerControls = GetComponent<PlayerControlsManager>().playerControls;
         inventoryPanel = GameObject.FindGameObjectWithTag(inventoryPanelTag);
+        mainCanvas = GameObject.FindGameObjectWithTag(mainCanvasTag);
+        selectedInventorySlotOverGraphic = Instantiate<GameObject>(selectedInventorySlotImageExample);
         
         inventory = new InventoryItemStack[inventorySize];
     }
@@ -132,6 +120,6 @@ public class Inventory : MonoBehaviour
             updateInventoryGraphics();
         }
 
-        print(selectedSlot);
+        selectedInventorySlotOverGraphic.transform.position = selectedInventorySlot.transform.position;
     }
 }
